@@ -63,4 +63,4 @@ if uploaded_file:
                 st.pyplot(fig)
 
     else:
-        st.error("Error loading the dataset.")
+        st.error("Error while loading the dataset.")
