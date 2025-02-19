@@ -20,7 +20,7 @@ Interactive charts
 
 Customizable data transformations
 
-Installation
+**Installation**
 
 pip install -r requirements.txt
 
