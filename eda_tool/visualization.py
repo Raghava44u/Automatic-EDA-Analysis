@@ -2,21 +2,18 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 def plot_histograms(df):
-    """Plots histograms for numerical features."""
     numeric_df = df.select_dtypes(include=['number'])  # Only numeric columns
     fig, ax = plt.subplots(figsize=(12, 6))
     numeric_df.hist(ax=ax, bins=30)
     return fig
 
 def plot_correlation_matrix(df):
-    """Plots a correlation heatmap."""
     numeric_df = df.select_dtypes(include=['number'])  # Only numeric columns
     fig, ax = plt.subplots(figsize=(10, 6))
     sns.heatmap(numeric_df.corr(), annot=True, cmap="coolwarm", fmt=".2f", ax=ax)
     return fig
 
 def plot_countplots(df):
-    """Plots count plots for categorical features."""
     categorical_cols = df.select_dtypes(include=['object']).columns
     figs = []
     for col in categorical_cols:
@@ -27,7 +24,6 @@ def plot_countplots(df):
     return figs
 
 def plot_boxplots(df):
-    """Plots box plots for numerical features to detect outliers."""
     numeric_cols = df.select_dtypes(include=['number']).columns
     figs = []
     for col in numeric_cols:
@@ -38,7 +34,6 @@ def plot_boxplots(df):
     return figs
 
 def plot_violinplots(df):
-    """Plots violin plots for numerical features."""
     numeric_cols = df.select_dtypes(include=['number']).columns
     figs = []
     for col in numeric_cols:
@@ -49,13 +44,11 @@ def plot_violinplots(df):
     return figs
 
 def plot_pairplot(df):
-    """Plots pair plot for numerical features."""
     numeric_df = df.select_dtypes(include=['number'])  # Only numeric columns
     fig = sns.pairplot(numeric_df)
     return fig
 
 def plot_kde(df):
-    """Plots Kernel Density Estimation (KDE) for numerical features."""
     numeric_cols = df.select_dtypes(include=['number']).columns
     figs = []
     for col in numeric_cols:
